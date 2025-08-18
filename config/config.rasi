@@ -1,0 +1,74 @@
+configuration {
+  modi: "drun,run";
+  show-icons: false;
+  font: "sans-serif 14";
+  sidebar-mode: false;
+}
+
+@theme "dark"
+* {
+  text-color: #909090; /* Gris */
+  background-color: #000000; /* Negro oscuro */
+  selected-background-color: #404040; /* Gris oscuro para el resaltado */
+  selected-text-color: #ffffff; /* Blanco para el texto seleccionado */
+}
+
+window {
+  width: 100%;
+  height: 10%;
+  location: center;
+  border: 0;
+  border-radius: 0;
+  border-color: @border-color;
+  padding: 10px;
+}
+
+mainbox {
+  background-color: @background-color;
+  children: [ inputbar, listview ];
+}
+
+inputbar {
+  children: [ prompt, entry ];
+  background-color: @background-color;
+  border: 0;
+  padding: 5px;
+}
+
+prompt {
+  background-color: @background-color;
+  text-color: @text-color;
+  padding: 5px 10px;
+}
+
+entry {
+  background-color: @background-color;
+  text-color: @text-color;
+  padding: 5px 10px;
+}
+
+listview {
+  background-color: @background-color;
+  padding: 0px;
+  spacing: 0px;
+  dynamic: true;
+  layout: vertical;
+  lines: 1;
+  columns: 6;
+}
+
+element {
+  padding: 5px;
+  border-radius: 5px;
+}
+
+element selected {
+  background-color: @selected-background-color;
+  text-color: @selected-text-color;
+}
+
+element-text, element-icon {
+  background-color: transparent;
+  text-color: inherit;
+}
+
