@@ -1,28 +1,23 @@
 configuration {
-  modi: "drun";
-  show-icons: true;
-  font: "sans-serif 10";
-  icon-theme: "Papirus";
-  display-drun: "Aplicaciones";
-  sidebar-mode: true;
+  modi: "drun,run";
+  show-icons: false;
+  font: "sans-serif 14";
+  sidebar-mode: false;
 }
 
 @theme "dark"
 * {
   text-color: #909090; /* Gris */
-  background-color: #1a1a1a; /* Negro oscuro */
+  background-color: #000000; /* Negro oscuro */
   selected-background-color: #404040; /* Gris oscuro para el resaltado */
   selected-text-color: #ffffff; /* Blanco para el texto seleccionado */
-  border-color: #505050; /* Un gris más claro para el borde */
 }
 
 window {
-  width: 300px;
-  height: 100%;
-  location: west;
-  x-offset: 0;
-  y-offset: 0;
-  border: 1px;
+  width: 100%;
+  height: 10%;
+  location: center;
+  border: 0;
   border-radius: 0;
   border-color: @border-color;
   padding: 10px;
@@ -54,9 +49,12 @@ entry {
 
 listview {
   background-color: @background-color;
-  padding: 5px;
-  spacing: 5px;
-  dynamic: false;
+  padding: 0px;
+  spacing: 0px;
+  dynamic: true;
+  layout: vertical;
+  lines: 1;
+  columns: 6;
 }
 
 element {
@@ -73,3 +71,4 @@ element-text, element-icon {
   background-color: transparent;
   text-color: inherit;
 }
+
