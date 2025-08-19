@@ -1,0 +1,10 @@
+1. Archivo install.sh es para 0pensuse
+2. Archivo debinstall.sh es para Debian
+
+No ejecuten ni no saben cual es su sistema si no, no les va a funcionar 
+
+debian -> sudo apt install fastfetch
+          fastfetch
+
+opensuse -> sudo zypper install fastfetch
+            fastfetch
