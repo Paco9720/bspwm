@@ -1,5 +1,7 @@
 #!/bin/sh
 
+export _JAVA_AWT_WM_NONREPARENTING=1
+export GDK_BACKEND=x11
 export GTK_THEME=Adwaita-dark
 export QT_QPA_PLATFORMTHEME=qt6ct
 export XDG_CURRENT_DESKTOP=bspwm
