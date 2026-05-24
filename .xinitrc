@@ -1,0 +1,45 @@
+#!/bin/sh
+
+export GTK_THEME=Adwaita-dark
+export QT_QPA_PLATFORMTHEME=qt6ct
+export XDG_CURRENT_DESKTOP=bspwm
+export XDG_SESSION_DESKTOP=bspwm
+export XDG_SESSION_TYPE=x11
+
+xsetroot -cursor_name left_ptr
+
+# pasar variables X11 a systemd user
+systemctl --user import-environment \
+DISPLAY \
+XAUTHORITY \
+DBUS_SESSION_BUS_ADDRESS \
+XDG_CURRENT_DESKTOP \
+XDG_SESSION_DESKTOP \
+XDG_SESSION_TYPE
+
+dbus-update-activation-environment --systemd \
+DISPLAY \
+XAUTHORITY \
+DBUS_SESSION_BUS_ADDRESS \
+XDG_CURRENT_DESKTOP \
+XDG_SESSION_DESKTOP \
+XDG_SESSION_TYPE
+
+# reiniciar portal ya con DISPLAY
+systemctl --user restart xdg-desktop-portal
+systemctl --user restart xdg-desktop-portal-gtk
+
+# wallpaper
+feh --bg-fill /mnt/sda1/pictures/wallhaven-6dp2xx.png &
+
+# servicios
+sxhkd &
+dunst &
+picom --config ~/.config/picom/picom.conf &
+~/.config/polybar/launch.sh &
+
+# file manager daemon
+thunar --daemon &
+
+exec bspwm
+
